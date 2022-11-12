@@ -29,9 +29,11 @@ gem 'jbuilder', '~> 2.5'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
+gem 'jsonapi-serializer'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'faraday'
+gem 'figaro'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -39,6 +41,12 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'factory_bot_rails'
+  gem 'rspec-rails'
+  gem 'pry'
+  gem 'vcr'
+  gem 'webmock'
+  gem 'shoulda-matchers', '~> 5.0'
 end
 
 group :development do
