@@ -8,6 +8,6 @@ class Recipe
     @title = data[:recipe][:label]
     @url = data[:recipe][:url]
     @image = data[:recipe][:image]
-    @country = country.downcase
+    @country = country
   end
 end

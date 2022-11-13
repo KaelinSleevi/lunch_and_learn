@@ -14,6 +14,6 @@ class EdamamService
   response = conn.get("/api/recipes/v2") do |req|
     req.params['q'] = country
   end
-  JSON.parse(response.body, symbolize_names: true)
+  JSON.parse(response.body, symbolize_names: true)[:hits]
  end
 end
