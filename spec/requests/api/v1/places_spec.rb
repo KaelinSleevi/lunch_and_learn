@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe "Api::V1::Places", type: :request do
+RSpec.describe "Api::V1::TouristSights", type: :request do
   describe "GET /index" do
     it 'can return a list of tourist sights in each country', :vcr do
       request_params = { lon: "2.33", lat: "48.87"}
       
-      get api_v1_places_path, params: request_params
+      get api_v1_tourist_sights_path, params: request_params
 
       expect(response).to be_successful
 
