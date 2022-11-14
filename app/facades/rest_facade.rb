@@ -6,4 +6,9 @@ class RestFacade
    country[:name][:common]
   end
  end
+
+ def self.random_country
+  country = country_details
+  country.shuffle.first
+ end
 end
