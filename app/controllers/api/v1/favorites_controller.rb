@@ -13,4 +13,10 @@ class Api::V1::FavoritesController < ApplicationController
    render json: { error: 'favorite unsuccessfully created' }
   end
  end
+
+ def index
+  @user = User.find_by(api_key: params[:api_key])
+  
+  render json: FavoriteSerializer.new(@user.favorites)
+ end
 end
