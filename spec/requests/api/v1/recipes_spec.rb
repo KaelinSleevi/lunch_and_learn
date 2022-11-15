@@ -45,6 +45,9 @@ RSpec.describe "Api::V1::Recipes", type: :request do
       expect(json).to have_key(:data)
       expect(json[:data]).to be_an(Array)
       expect(json[:data]).to eq([])
+      expect(json).to_not have_key(:id)
+      expect(json).to_not have_key(:type)
+      expect(json).to_not have_key(:attributes)
     end
   end
 end
