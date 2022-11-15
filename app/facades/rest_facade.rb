@@ -11,4 +11,9 @@ class RestFacade
   country = country_details
   country.shuffle.first
  end
+ 
+ # def self.get_country_lat_long(country)
+ #  country_data = RestService.get_one_country(country)
+ #  lat_lon = country_data[0][:latlng]
+ # end
 end

@@ -70,4 +70,8 @@ VCR.configure do |config|
   config.configure_rspec_metadata!
   config.filter_sensitive_data('<app_id>') { Figaro.env.app_id }
   config.filter_sensitive_data('<app_key>') { Figaro.env.app_key }
+  config.filter_sensitive_data('<api_key>') { Figaro.env.api_key }
+  config.filter_sensitive_data('<key>') { Figaro.env.key }
+  config.filter_sensitive_data('<access_key>') { Figaro.env.access_key }
+  config.filter_sensitive_data('<secret_key>') { Figaro.env.secret_key }
 end 
