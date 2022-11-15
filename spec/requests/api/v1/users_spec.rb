@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe "Api::V1::Users", type: :request do
-  describe "GET /index" do
+  describe "GET /create" do
     it 'can register a user' do
      headers = { "CONTENT_TYPE" => "application/json" }
 
-     user_params = { 'name': "Ray Charles", 'email': "raybay@guhmail.com" }
+     user_params = { "name": "Ray Charles", "email": "raybay@guhmail.com" }
 
      post api_v1_users_path, headers: headers, params: JSON.generate(user: user_params)
 
