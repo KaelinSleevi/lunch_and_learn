@@ -5,9 +5,9 @@ RSpec.describe "Api::V1::Users", type: :request do
     it 'can register a user' do
      headers = { "CONTENT_TYPE" => "application/json" }
 
-     user_params = { name: "Ray Charles", email: "raybay@guhmail.com" }
+     user_params = { 'name': "Ray Charles", 'email': "raybay@guhmail.com" }
 
-     post api_v1_users_path, headers: headers, params: JSON.generate({user: user_params})
+     post api_v1_users_path, headers: headers, params: JSON.generate(user: user_params)
 
       expect(response).to be_successful
       expect(response.status).to eq(201)

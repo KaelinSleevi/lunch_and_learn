@@ -3,6 +3,7 @@ class Api::V1::UsersController < ApplicationController
    user = User.create(
      name: params[:user][:name],
      email: params[:user][:email],
+     #api_key: SecureRandom???
    )
  end
 end
