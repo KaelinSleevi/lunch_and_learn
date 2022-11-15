@@ -1,8 +1,15 @@
 class Api::V1::LearningResourcesController < ApplicationController
  def index
-  response = Faraday.get("https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCluQ5yInbeAkkeCndNnUhpw&q=China&key=AIzaSyDdWt8K3a4Ilr5Qwc81U6fB_8CDJ2wyzUA")
-  response2 = Faraday.get("https://api.unsplash.com/search/photos?page=1&query=thailand&client_id=dyjjIbIvNkiRhz350vfQsoSLTFVzJi2sR5F2f6XrdSQ")
+  country = count_params
+  photos = PhotoFacade.photo_details(count_params)
+  videos = VideoFacade.video_details(count_params)
+  
+  render json: LearningResourcesSerializer.resources(videos, photos, country)
+ end
 
-  json = JSON.parse(response.body, symbolize_names: true)
+ private
+
+ def count_params
+  params.permit(:country)
  end
 end
