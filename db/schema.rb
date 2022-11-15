@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_15_044939) do
+ActiveRecord::Schema.define(version: 2022_11_15_194349) do
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "country"
+    t.string "recipe_link"
+    t.string "recipe_title"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
