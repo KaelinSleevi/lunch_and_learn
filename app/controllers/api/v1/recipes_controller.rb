@@ -1,7 +1,7 @@
 class Api::V1::RecipesController < ApplicationController
 
  def index
-  country = RestFacade.country_details
+  country = country_params
   random_country = RestFacade.random_country
 
   if country.present?
@@ -11,5 +11,11 @@ class Api::V1::RecipesController < ApplicationController
    random_recipe = EdamamFacade.recipe_details(random_country)
    render json: RecipeSerializer.new(random_recipe)
   end
+ end
+
+ private
+
+ def country_params
+  params.permit(:country)
  end
 end
