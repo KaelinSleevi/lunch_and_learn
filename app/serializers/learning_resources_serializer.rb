@@ -21,17 +21,6 @@ class LearningResourcesSerializer
     }
    }
   else
-     {
-    data: {
-        id: nil,
-        type: "learning_resource",
-        attributes: {
-            country: country, 
-            video: [],
-            images: []
-        }
-    }
-  }
   end
  end
 end
