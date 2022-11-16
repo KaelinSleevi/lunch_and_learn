@@ -8,6 +8,6 @@
 
 ## Setup
 ------------
-- clone this repo
-- 'bundle install'
-- rails db:{create,migrate,seed}
+- Clone this repo
+- ```bundle install```
+- ```rails db:{create,migrate,seed}```
